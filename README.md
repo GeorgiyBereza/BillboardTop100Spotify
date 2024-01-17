@@ -8,3 +8,7 @@ This app allows you to create a Spotify playlist from Billboard's Top 100 for an
   <li>scrapes the top 100 songs from https://www.billboard.com/charts/hot-100/ (titles and artist names) for chosen date using BeautifulSoup library and prints this list of pairs song - artist.</li>
   <li>creates a Spotify playlist using a Spotipy library</li>
 </ol>
+
+<h3>Demo</h3>
+
+![](https://github.com/GeorgiyBereza/BillboardTop100Spotify/blob/main/spotidemo.gif)
