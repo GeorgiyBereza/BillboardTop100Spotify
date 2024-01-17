@@ -1,5 +1,4 @@
 import datetime
-
 from bs4 import BeautifulSoup
 import requests
 import spotipy
@@ -7,11 +6,11 @@ from spotipy.oauth2 import SpotifyOAuth
 
 # ---------------------------- User Data ------------------------------- #
 URL = "https://www.billboard.com/charts/hot-100/"
-CLIENT_ID = "a4dd0a1da08247039400af348f714381"
-CLIENT_SECRET = "65b2ff5b98244bfe9158f0f002c2c78c"
+CLIENT_ID = "PUT YOUR ID HERE"
+CLIENT_SECRET = "PUT YOUR CLIENT SECRET HERE"
 SPOTIPY_REDIRECT_URI = "http://example.com"
 SCOPE = "playlist-modify-private"
-USERNAME = "TEETHGRINDER_GB"
+USERNAME = "PUT YOUR USERNAME HERE"
 # ----------------------- Choosing a date and validating input ------------------------- #
 date_is_chosen = False
 global chosen_date
