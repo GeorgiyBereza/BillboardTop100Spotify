@@ -1,3 +1,5 @@
+import datetime
+
 from bs4 import BeautifulSoup
 import requests
 import spotipy
@@ -10,8 +12,29 @@ CLIENT_SECRET = "65b2ff5b98244bfe9158f0f002c2c78c"
 SPOTIPY_REDIRECT_URI = "http://example.com"
 SCOPE = "playlist-modify-private"
 USERNAME = "TEETHGRINDER_GB"
+# ----------------------- Choosing a date and validating input ------------------------- #
+date_is_chosen = False
+global chosen_date
+while not date_is_chosen:
+    try:
+        print("Year (YYYY):")
+        year = input()
+        print("Month (MM):")
+        month = input()
+        print("Day (DD):")
+        day = input()
+        chosen_date = datetime.date(year=int(year), month=int(month), day=int(day))
+        if chosen_date > datetime.date.today():
+            print("Can't see into the future, try again")
+        elif chosen_date < datetime.date(year=1958, month=8, day=4):
+            print("The earliest top 100 is 1958-08-04, try again")
+        else:
+            date_is_chosen = True
+    except:
+        print("Invalid input, try again")
 
-date = "1997-03-11"
+date = str(chosen_date)
+print("You have chosen this date: " + date)
 
 # ---------------------------- Scraping ------------------------- #
 response = requests.get(URL + date + "/")
